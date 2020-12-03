@@ -1,0 +1,16 @@
+﻿"Symbol";"Value";"Unit";
+"SUPPLIER_NAME";"RS Components";"";
+"TraceParts.PartVersion";"1.0.8";"";
+"SUPPLIER";"Apem Components";"";
+"TraceParts.PartStatus";"Published";"";
+"TraceParts.PartNumber";"10-16112011-143288";"";
+"TraceParts.PartLanguage";"en";"";
+"DESIGN";"APEM Single Pole Single Throw (SPST) Momentary Push Button Switch, 22.2 (Dia.)mm, Panel Mount, Screw Mount, 24/48V dc";"";
+"TraceParts.InstanceId";"10-16112011-143288DRBKROHHX9SUBL0OGHY4QP8SA";"";
+"TraceParts.PartTitle";"APEM Single Pole Single Throw (SPST) Momentary Push Button Switch, 22.2 (Dia.)mm, Panel Mount, Screw Mount, 24/48V dc";"";
+"REFERENCE";"AV191003C900";"";
+"Buy_Now";"https://uk.rs-online.com/web/p/products/1790906?cm_mmc=en-ds-_-mcad-_-traceparts-_-1790906'";"";
+"TRACEPARTS";"TRACEPARTS";"";
+"TraceParts.PartStatusId";"";"";
+"rs_stock_number";"1790906";"";
+"TraceParts.ClassPath";"RS_COMPONENTS:10-16112011-143288";"";
