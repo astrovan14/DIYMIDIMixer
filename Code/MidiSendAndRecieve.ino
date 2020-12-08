@@ -6,7 +6,17 @@ void controlChange(byte channel, byte control, byte value) {
   MidiUSB.sendMIDI(event);
 }
 
+void noteOn(byte channel, byte pitch, byte velocity) {
+  midiEventPacket_t noteOn = {0x09, 0x90 | channel, pitch, velocity};
+  MidiUSB.sendMIDI(noteOn);
+}
+
+const int buttonPin = 12;
+int buttonState;
+int lastButtonState = LOW;
 int prevOutputValue=0;
+unsigned long lastDebounceTime = 0;
+unsigned long debounceDelay = 5;
 const int analogInPin = A0;
 int sensorValue = 0;
 int outputValue = 0;
@@ -15,7 +25,7 @@ int pins[] = {9, 10, 11};
 //int nodes = 6;
 ChuckPlex muteLEDs = ChuckPlex(pins, 3);
 void setup(){
-
+ pinMode(buttonPin, INPUT);
   // print the connections to make
   // you should remove this section once you've done your wiring
 //   Serial.begin(9600);
@@ -75,5 +85,22 @@ if (rx.header != 0) {
     MidiUSB.flush();
     prevOutputValue=outputValue;
   }
+  
+  int reading = digitalRead(buttonPin);
+  if (reading != lastButtonState) {
+    lastDebounceTime = millis();
+  }
+
+  if ((millis() - lastDebounceTime) > debounceDelay) {
+    if (reading != buttonState) {
+      buttonState = reading;
+      if (buttonState == HIGH) {
+        noteOn(3,0,127);
+        MidiUSB.flush();
+      }
+    }
+  }
+  lastButtonState = reading;
+  
   delay(2);
 }
